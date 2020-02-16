@@ -24,19 +24,19 @@ import fr.bukkit.effectkill.utils.maths.MathUtils;
 public class Satan extends MainEffectKill{
 
 	public Satan() {
-		super("satan",YAMLUtils.get("messages").getFile().exists()?((String) Utils.gfc("messages", "effectKill.satan.name")):("§eSatan"), new ArrayList<>(Arrays.asList("&8Your text here.", "&8Left-click to have this effect")), Heads.DEVIL.getTexture());
+		super("satan",YAMLUtils.get("messages").getFile().exists()?((String) Utils.gfc("messages", "effectKill.satan.name")):("Â§eSatan"), new ArrayList<>(Arrays.asList("&8Your text here.", "&8Left-click to have this effect")), Heads.DEVIL.getTexture());
 	}
 	
 	@Override
 	public void update(User user) {
-		Location loc = user.getPlayer().getLocation();
+	    Location loc = user.getPlayer().getLocation();
 	    ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short)3);
 	    SkullMeta skullMeta = (SkullMeta)skull.getItemMeta();
 	    skullMeta.setOwner(user.getPlayer().getName());
 	    skull.setItemMeta(skullMeta);
 	    ArmorStand armor = (ArmorStand)loc.getWorld().spawnEntity(loc, EntityType.ARMOR_STAND);
 	    armor.setVisible(false);
-	    armor.setCustomName("§c§l" + user.getPlayer().getName());
+	    armor.setCustomName("Â§cÂ§l" + user.getPlayer().getName());
 	    armor.setCustomNameVisible(true);
 	    armor.setHelmet(skull);
 	    armor.setGravity(false);
